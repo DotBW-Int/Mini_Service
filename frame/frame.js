@@ -118,4 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('dark-theme');
         themeToggle.checked = true;
     }
+
+            // Listen for messages from iframe
+            window.addEventListener('message', function(event) {
+                if (event.data.height) {
+                    iframe.style.height = event.data.height + 'px';
+                }
+            });
 });

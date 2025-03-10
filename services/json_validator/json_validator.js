@@ -36,4 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', event.data.theme);
         }
     });
+
+    // Send height to parent page
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ height: height }, '*');
+    }
+
+    // Send height on load and resize
+    sendHeight();
+    window.addEventListener('resize', sendHeight);
 });
