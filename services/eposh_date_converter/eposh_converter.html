@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epoch Date Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="eposh_converter.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Epoch Date Converter</h1>
+        <p class="text-center">Use this tool to convert milliseconds to date and time, and vice versa. Follow the steps below:</p>
+        <ul class="text-center list-unstyled">
+            <li><strong>Convert Milliseconds to Date and Time:</strong> Enter the milliseconds and click "Convert to Date".</li>
+            <li><strong>Convert Date and Time to Milliseconds:</strong> Enter the date and time and click "Convert to Milliseconds".</li>
+        </ul>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="milliseconds">Milliseconds:</label>
+                    <input type="number" id="milliseconds" class="form-control" placeholder="Enter milliseconds">
+                </div>
+                <div class="form-group text-center">
+                    <button id="convert-to-date" class="btn btn-success mx-2">Convert to Date</button>
+                </div>
+                <div class="form-group">
+                    <label for="result-date">Result Date and Time:</label>
+                    <input type="text" id="result-date" class="form-control" readonly>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="input-date">Date and Time:</label>
+                    <input type="datetime-local" id="input-date" class="form-control">
+                </div>
+                <div class="form-group text-center">
+                    <button id="convert-to-milliseconds" class="btn btn-success mx-2">Convert to Milliseconds</button>
+                </div>
+                <div class="form-group">
+                    <label for="result-milliseconds">Result Milliseconds:</label>
+                    <input type="text" id="result-milliseconds" class="form-control" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="eposh_converter.js"></script>
+</body>
+</html>

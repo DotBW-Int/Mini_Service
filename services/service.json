@@ -1,0 +1,16 @@
+{
+    "services": [
+        {
+            "name": "Date Handling",
+            "path": "./services/date_handling/date_handling.html"
+        },
+        {
+            "name": "XML Validator",
+            "path": "./services/xml_validator.html"
+        },
+        {
+            "name": "JSON Validator",
+            "path": "./services/json_validator.html"
+        }
+    ]
+}

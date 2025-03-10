@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Frame</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../frame/frame.css">
+</head>
+<body>
+    <header class="bg-dark-grey text-white text-center py-3 border-bottom">
+        <h1>CTriangle Mini Services</h1>
+        <div class="toggle-switch">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span id="theme-label">Night Mode</span>
+        </div>
+    </header>
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12 col-md-2 d-none d-md-block" id="sidebar">
+                <input type="text" id="search-bar" class="form-control mb-3" placeholder="Search for a service...">
+                <div id="services-list" class="list-group">
+                    <!-- Services list will be populated here from JSON -->
+                </div>
+            </div>
+            <div class="col-12 col-md-10" id="content">
+                <iframe id="service-frame" src="" style="width: 100%; height: 100vh; border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark-grey text-white text-center py-3 mt-auto border-top">
+        <p>&copy; 2025 CTriangle. All rights reserved.</p>
+        <div>
+            <a href="#" class="text-white mx-2">Facebook</a>
+            <a href="#" class="text-white mx-2">Twitter</a>
+            <a href="#" class="text-white mx-2">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="frame.js"></script>
+</body>
+</html>

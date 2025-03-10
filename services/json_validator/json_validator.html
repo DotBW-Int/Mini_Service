@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Validator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="json_validator.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">JSON Validator</h1>
+        <p class="text-center">Use this tool to validate your JSON content. Follow the steps below:</p>
+        <ul class="text-center list-unstyled">
+            <li><strong>Enter JSON:</strong> Paste your JSON content into the text area below.</li>
+            <li><strong>Validate:</strong> Click the "Validate JSON" button to check if the JSON is well-formed.</li>
+        </ul>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="json-input">JSON Content:</label>
+                    <textarea id="json-input" class="form-control" rows="10" placeholder="Paste your JSON content here..."></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button id="validate-json" class="btn btn-success mx-2">Validate JSON</button>
+                </div>
+                <div class="form-group">
+                    <label for="validation-result">Validation Result:</label>
+                    <textarea id="validation-result" class="form-control" rows="5" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="json_validator.js"></script>
+</body>
+</html>

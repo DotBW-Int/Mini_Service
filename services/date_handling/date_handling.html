@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Manipulation Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="date_handling.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Date Manipulation Tool</h1>
+        <p class="text-center">Use this tool to add or subtract days, weeks, months, or years from a given date. Follow the steps below:</p>
+        <ul class="text-center list-unstyled">
+            <li><strong>Select Date:</strong> Choose the starting date from the date picker.</li>
+            <li><strong>Number of Units:</strong> Enter the number of units (days, weeks, months, or years) to add or subtract.</li>
+            <li><strong>Select Unit Type:</strong> Choose the unit type from the dropdown menu.</li>
+            <li><strong>Calculate:</strong> Click the "Add" or "Subtract" button to see the result.</li>
+        </ul>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="input-date">Select Date:</label>
+                    <input type="date" id="input-date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="units">Number of Units:</label>
+                    <input type="number" id="units" class="form-control" placeholder="Enter number of units">
+                </div>
+                <div class="form-group">
+                    <label for="unit-type">Select Unit Type:</label>
+                    <select id="unit-type" class="form-control">
+                        <option value="days">Days</option>
+                        <option value="weeks">Weeks</option>
+                        <option value="months">Months</option>
+                        <option value="years">Years</option>
+                    </select>
+                </div>
+                <div class="form-group text-center">
+                    <button id="add" class="btn btn-success mx-2">Add</button>
+                    <button id="subtract" class="btn btn-danger mx-2">Subtract</button>
+                </div>
+                <div class="form-group">
+                    <label for="result-date">Result Date:</label>
+                    <input type="text" id="result-date" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="result-explanation">Explanation:</label>
+                    <textarea id="result-explanation" class="form-control" rows="3" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="date_handling.js"></script>
+</body>
+</html>

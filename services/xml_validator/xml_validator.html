@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Validator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="xml_validator.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">XML Validator</h1>
+        <p class="text-center">Use this tool to validate your XML content. Follow the steps below:</p>
+        <ul class="text-center list-unstyled">
+            <li><strong>Enter XML:</strong> Paste your XML content into the text area below.</li>
+            <li><strong>Validate:</strong> Click the "Validate XML" button to check if the XML is well-formed.</li>
+        </ul>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="xml-input">XML Content:</label>
+                    <textarea id="xml-input" class="form-control" rows="10" placeholder="Paste your XML content here..."></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button id="validate-xml" class="btn btn-success mx-2">Validate XML</button>
+                </div>
+                <div class="form-group">
+                    <label for="validation-result">Validation Result:</label>
+                    <textarea id="validation-result" class="form-control" rows="5" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="xml_validator.js"></script>
+</body>
+</html>
