@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
+    
     // Check the initial state of the toggle switch and set the theme accordingly
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
