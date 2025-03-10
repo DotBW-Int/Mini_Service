@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "services": [
             {
                 "name": "Date Handling",
-                "path": "./services/date_handling/date_handling.html"
+                "path": "../services/date_handling/date_handling.html"
             },
             {
                 "name": "Epoch Converter",
@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 "name": "XML Validator",
-                "path": "./services/xml_validator/xml_validator.html"
+                "path": "../services/xml_validator/xml_validator.html"
             },
             {
                 "name": "JSON Validator",
-                "path": "./services/json_validator/json_validator.html"
+                "path": "../services/json_validator/json_validator.html"
             }
         ]
     };
