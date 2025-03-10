@@ -52,23 +52,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedTheme === 'light') {
         body.classList.add('light-theme');
         toggleSwitch.checked = true;
-        themeLabel.textContent = 'Day Mode';
+        themeLabel.textContent = '';
     } else {
         body.classList.add('dark-theme');
         toggleSwitch.checked = false;
-        themeLabel.textContent = 'Night Mode';
+        themeLabel.textContent = '';
     }
 
     toggleSwitch.addEventListener('change', function() {
         if (toggleSwitch.checked) {
             body.classList.remove('dark-theme');
             body.classList.add('light-theme');
-            themeLabel.textContent = 'Day Mode';
+            themeLabel.textContent = '';
             localStorage.setItem('theme', 'light');
         } else {
             body.classList.remove('light-theme');
             body.classList.add('dark-theme');
-            themeLabel.textContent = 'Night Mode';
+            themeLabel.textContent = '';
             localStorage.setItem('theme', 'dark');
         }
     });
@@ -91,5 +91,31 @@ document.addEventListener('DOMContentLoaded', function() {
     function adjustIframeHeight() {
         const iframeDocument = serviceFrame.contentDocument || serviceFrame.contentWindow.document;
         serviceFrame.style.height = iframeDocument.body.scrollHeight + 'px';
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const iframe = document.getElementById('service-frame');
+
+    themeToggle.addEventListener('change', function() {
+        const theme = themeToggle.checked ? 'dark' : 'light';
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+        document.body.classList.toggle('light-theme', theme === 'light');
+        localStorage.setItem('theme', theme);
+
+        // Send message to iframe
+        iframe.contentWindow.postMessage({ theme: theme }, '*');
+    });
+
+    // Apply saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeToggle.checked = false;
+    } else {
+        document.body.classList.add('dark-theme');
+        themeToggle.checked = true;
     }
 });

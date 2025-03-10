@@ -43,4 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         body.classList.add('dark-theme');
     }
+        // Listen for messages from parent page
+        window.addEventListener('message', function(event) {
+            if (event.data.theme) {
+                body.classList.toggle('dark-theme', event.data.theme === 'dark');
+                body.classList.toggle('light-theme', event.data.theme === 'light');
+                localStorage.setItem('theme', event.data.theme);
+            }
+        });
 });

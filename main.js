@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedTheme === 'light') {
         body.classList.add('light-theme');
         toggleSwitch.checked = true;
-        themeLabel.textContent = 'Day Mode';
+        themeLabel.textContent = '';
     } else {
         body.classList.add('dark-theme');
         toggleSwitch.checked = false;
-        themeLabel.textContent = 'Night Mode';
+        themeLabel.textContent = '';
     }
 
     // Hide ad boxes if they are empty
@@ -51,12 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (toggleSwitch.checked) {
             body.classList.remove('dark-theme');
             body.classList.add('light-theme');
-            themeLabel.textContent = 'Day Mode';
+            themeLabel.textContent = '';
             localStorage.setItem('theme', 'light');
         } else {
             body.classList.remove('light-theme');
             body.classList.add('dark-theme');
-            themeLabel.textContent = 'Night Mode';
+            themeLabel.textContent = '';
             localStorage.setItem('theme', 'dark');
         }
     });
