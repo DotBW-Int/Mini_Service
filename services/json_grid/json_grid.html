@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Grid</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="json_grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">JSON Grid</h1>
+        <p class="text-center">Use this tool to view your JSON content in a neat format. Follow the steps below:</p>
+        <ul class="text-center list-unstyled">
+            <li><strong>Enter JSON:</strong> Paste your JSON content into the text area below.</li>
+            <li><strong>Choose View:</strong> Select either "Tree View" or "Table View" to format the JSON content.</li>
+        </ul>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="json-input">JSON Content:</label>
+                    <textarea id="json-input" class="form-control" rows="10" placeholder="Paste your JSON content here..."></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button id="view-tree" class="btn btn-primary mx-2">Tree View</button>
+                    <button id="view-table" class="btn btn-secondary mx-2">Table View</button>
+                </div>
+                <div id="json-viewer" class="form-group"></div>
+                <div id="json-table" class="table-responsive" style="display: none;">
+                    <table class="table table-bordered" id="json-table-content"></table>
+                </div>
+                <div class="form-group text-center">
+                    <button id="expand-screen" class="btn btn-info mx-2">Expand Screen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fullscreen-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="fullscreen-json-viewer"></div>
+            <div id="fullscreen-json-table" class="table-responsive" style="display: none;">
+                <table class="table table-bordered" id="fullscreen-json-table-content"></table>
+            </div>
+        </div>
+    </div>
+
+    <script src="json_grid.js"></script>
+</body>
+</html>

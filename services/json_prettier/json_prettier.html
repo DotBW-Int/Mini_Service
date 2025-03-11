@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Prettier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="json_prettier.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">JSON Prettier</h1>
+        <p class="text-center">Use this tool to prettify your JSON content. Follow the steps below:</p>
+        <ul class="text-center list-unstyled">
+            <li><strong>Enter JSON:</strong> Paste your JSON content into the text area below.</li>
+            <li><strong>Prettify:</strong> Click the "Prettify JSON" button to format the JSON content.</li>
+        </ul>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="json-input">JSON Content:</label>
+                    <textarea id="json-input" class="form-control" rows="10" placeholder="Paste your JSON content here..."></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <button id="prettify-json" class="btn btn-success mx-2">Prettify JSON</button>
+                </div>
+                <div class="form-group">
+                    <label for="prettified-result">Prettified Result:</label>
+                    <textarea id="prettified-result" class="form-control" rows="10" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="json_prettier.js"></script>
+</body>
+</html>

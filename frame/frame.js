@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 "name": "JSON Validator",
                 "path": "../services/json_validator/json_validator.html"
+            },
+            {
+                "name": "JSON Beatify",
+                "path": "../services/json_prettier/json_prettier.html"
+            },
+            {
+                "name": "JSON Viewer",
+                "path": "../services/json_grid/json_grid.html"
             }
         ]
     };

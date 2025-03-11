@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.dark-theme {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+}
+
+.light-theme {
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Black text */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 200px;
+}
+
+#json-input, #prettified-result {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.dark-theme #json-input, .dark-theme #prettified-result {
+    background-color: #333333; /* Dark grey background */
+    color: #ffffff; /* White text */
+}
