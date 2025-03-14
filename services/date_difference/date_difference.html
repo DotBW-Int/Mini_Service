@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="date_difference.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="description" content="Calculate the difference between two dates in days, weeks, years, hours, minutes, seconds, milliseconds, and find the day of the week for each date.">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Date Difference Calculator</h1>
+        <p class="text-center">Use this tool to calculate the difference between two dates in various units and find the day of the week for each date.</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date" class="form-control">
+                </div>
+                <div class="form-group text-center">
+                    <button id="calculate" class="btn btn-success mx-2">Calculate</button>
+                </div>
+                <div id="result" class="form-group" style="display: none;">
+                    <h3>Result:</h3>
+                    <p id="days"></p>
+                    <p id="weeks"></p>
+                    <p id="years"></p>
+                    <p id="hours"></p>
+                    <p id="minutes"></p>
+                    <p id="seconds"></p>
+                    <p id="milliseconds"></p>
+                    <p id="start-day"></p>
+                    <p id="end-day"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="date_difference.js"></script>
+</body>
+</html>

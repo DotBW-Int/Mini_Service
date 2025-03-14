@@ -32,6 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 "name": "JSON Viewer",
                 "path": "../services/json_grid/json_grid.html"
+            },
+            {
+                "name": "Date Difference",
+                "path": "../services/date_difference/date_difference.html"
+            },
+            {
+                "name": "Json Stringify",
+                "path": "../services/json_stringify/json_stringify.html"
             }
         ]
     };

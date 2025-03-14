@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.dark-theme {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+}
+
+.light-theme {
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Black text */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 150px;
+}
+
+#start-date, #end-date {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.dark-theme #start-date, .dark-theme #end-date {
+    background-color: #333333; /* Dark grey background */
+    color: #ffffff; /* White text */
+}
+
+.light-theme #start-date, .light-theme #end-date {
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Black text */
+}
+
+#result p {
+    margin: 5px 0;
+}
