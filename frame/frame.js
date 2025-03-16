@@ -42,6 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 "name": "Json Stringify",
                 "path": "../services/json_stringify/json_stringify.html"
+            },
+            {
+                "name": "Interest Calculator",
+                "path": "../services/interest_calculator/interest_calculator.html"
             }
         ]
     };

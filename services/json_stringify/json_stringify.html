@@ -1,39 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light-theme">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Stringify and Parse</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="json_stringify.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="description" content="Stringify JSON and parse JSON strings easily with this tool.">
 </head>
-<body>
-    <div class="container my-5">
-        <h1 class="text-center">JSON Stringify and Parse</h1>
-        <p class="text-center">Use this tool to stringify JSON objects and parse JSON strings.</p>
-        
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="form-group">
-                    <label for="json-input">JSON Input:</label>
-                    <textarea id="json-input" class="form-control" rows="10" placeholder="Paste your JSON content here..."></textarea>
-                </div>
-                <div class="form-group text-center">
-                    <button id="stringify" class="btn btn-success mx-2">Stringify</button>
-                    <button id="parse" class="btn btn-secondary mx-2">Parse</button>
-                </div>
-                <div id="result" class="form-group" style="display: none;">
-                    <div class="form-group text-center">
-                        <button id="oneline" class="btn btn-secondary mx-2">One Line</button>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Main Content -->
+    <main class="flex-grow-1">
+        <div class="container my-5">
+            <h1 class="text-center mb-4">JSON Stringify and Parse</h1>
+            <p class="text-center">Use this tool to stringify JSON objects and parse JSON strings.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="calculator-card">
+                        <div class="form-group">
+                            <label for="json-input">JSON Input:</label>
+                            <textarea id="json-input" class="form-control modern-input" rows="10" placeholder="Paste your JSON content here..."></textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <button id="stringify" class="btn btn-primary mx-2">Stringify</button>
+                            <button id="parse" class="btn btn-secondary mx-2">Parse</button>
+                        </div>
+                        <div id="result" class="form-group" style="display: none;">
+                            <div class="form-group text-center">
+                                <button id="oneline" class="btn btn-secondary mx-2">One Line</button>
+                            </div>
+                            <h3>Result:</h3>
+                            <textarea id="result-content" class="form-control modern-input" rows="10"></textarea>
+                        </div>
                     </div>
-                    <h3>Result:</h3>
-                    <textarea id="result-content" class="form-control" rows="10"></textarea>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="json_stringify.js"></script>
 </body>

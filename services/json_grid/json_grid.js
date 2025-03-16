@@ -244,21 +244,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Apply theme based on local storage
-    const body = document.body;
+    const html = document.documentElement;
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
-        body.classList.add('light-theme');
+        html.classList.add('light-theme');
     } else {
-        body.classList.add('dark-theme');
+        html.classList.add('dark-theme');
     }
 
     // Listen for messages from parent page
     window.addEventListener('message', function(event) {
         if (event.data.theme) {
-            body.classList.toggle('dark-theme', event.data.theme === 'dark');
-            body.classList.toggle('light-theme', event.data.theme === 'light');
+            html.classList.toggle('dark-theme', event.data.theme === 'dark');
+            html.classList.toggle('light-theme', event.data.theme === 'light');
             localStorage.setItem('theme', event.data.theme);
-            applyThemeToModal();
         }
     });
 

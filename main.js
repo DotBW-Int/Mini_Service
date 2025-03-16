@@ -1,108 +1,123 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleSwitch = document.getElementById('theme-toggle');
-    const body = document.body;
-    const themeLabel = document.getElementById('theme-label');
-    const adBoxes = document.querySelectorAll('.ad-box');
+    // DOM Elements
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
     const searchBar = document.getElementById('search-bar');
     const servicesContainer = document.getElementById('services-container');
+    const adBoxes = document.querySelectorAll('.ad-box');
 
-    // JSON data stored in a variable
+    // Services Data
     const servicesData = {
         "services": [
             {
                 "name": "Date Handling",
-                "path": "../services/date_handling/date_handling.html"
+                "path": "../services/date_handling/date_handling.html",
+                "icon": "far fa-calendar-alt"
             },
             {
                 "name": "Epoch Converter",
-                "path": "../services/eposh_date_converter/eposh_converter.html"
+                "path": "../services/eposh_date_converter/eposh_converter.html",
+                "icon": "fas fa-clock"
             },
             {
                 "name": "XML Validator",
-                "path": "../services/xml_validator/xml_validator.html"
+                "path": "../services/xml_validator/xml_validator.html",
+                "icon": "fas fa-code"
             },
             {
                 "name": "JSON Validator",
-                "path": "../services/json_validator/json_validator.html"
+                "path": "../services/json_validator/json_validator.html",
+                "icon": "fas fa-check-circle"
             },
             {
-                "name": "JSON Beatify",
-                "path": "../services/json_prettier/json_prettier.html"
+                "name": "JSON Beautify",
+                "path": "../services/json_prettier/json_prettier.html",
+                "icon": "fas fa-paint-brush"
             },
             {
                 "name": "JSON Viewer",
-                "path": "../services/json_grid/json_grid.html"
+                "path": "../services/json_grid/json_grid.html",
+                "icon": "fas fa-table"
             },
             {
                 "name": "Date Difference",
-                "path": "../services/date_difference/date_difference.html"
+                "path": "../services/date_difference/date_difference.html",
+                "icon": "fas fa-calendar-day"
             },
             {
-                "name": "Json Stringify",
-                "path": "../services/json_stringify/json_stringify.html"
+                "name": "JSON Stringify",
+                "path": "../services/json_stringify/json_stringify.html",
+                "icon": "fas fa-compress-alt"
+            },
+            {
+                "name": "Interest Calculator",
+                "path": "../services/interest_calculator/interest_calculator.html",
+                "icon": "fas fa-calculator"
             }
         ]
     };
 
-    
-    // Check the initial state of the toggle switch and set the theme accordingly
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-theme');
-        toggleSwitch.checked = true;
-        themeLabel.textContent = '';
-    } else {
-        body.classList.add('dark-theme');
-        toggleSwitch.checked = false;
-        themeLabel.textContent = '';
+    // Theme Management
+    function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+        themeToggle.checked = savedTheme === 'dark';
     }
 
-    // Hide ad boxes if they are empty
-    adBoxes.forEach(adBox => {
-        if (!adBox.textContent.trim()) {
-            adBox.style.display = 'none';
-        }
-    });
+    function applyTheme(theme) {
+        html.className = `${theme}-theme`;
+        localStorage.setItem('theme', theme);
+    }
 
-    toggleSwitch.addEventListener('change', function() {
-        if (toggleSwitch.checked) {
-            body.classList.remove('dark-theme');
-            body.classList.add('light-theme');
-            themeLabel.textContent = '';
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.classList.remove('light-theme');
-            body.classList.add('dark-theme');
-            themeLabel.textContent = '';
-            localStorage.setItem('theme', 'dark');
-        }
-    });
-
-    // Populate the services container with data from the JSON variable
-    servicesData.services.forEach(service => {
+    // Service Management
+    function createServiceCard(service) {
         const serviceItem = document.createElement('div');
-        serviceItem.classList.add('col-12', 'col-md-4', 'service-item');
+        serviceItem.classList.add('col-12', 'col-md-4', 'col-lg-3', 'service-item');
         serviceItem.innerHTML = `
-            <div class="service-box p-3 mb-4 text-center">
-                <a href="frame/frame.html?service=${encodeURIComponent(service.path)}" class="text-white">
-                    <h3>${service.name}</h3>
+            <div class="service-box p-3 mb-4">
+                <a href="frame/frame.html?service=${encodeURIComponent(service.path)}" 
+                   class="service-link">
+                    <i class="${service.icon} service-icon mb-3"></i>
+                    <h3 class="service-title">${service.name}</h3>
                 </a>
             </div>
         `;
-        servicesContainer.appendChild(serviceItem);
-    });
+        return serviceItem;
+    }
 
-    // Filter services based on search input
-    searchBar.addEventListener('input', function() {
-        const searchTerm = searchBar.value.toLowerCase();
+    function filterServices(searchTerm) {
         const serviceItems = document.querySelectorAll('.service-item');
         serviceItems.forEach(item => {
-            const serviceName = item.querySelector('h3').textContent.toLowerCase();
-            if (serviceName.includes(searchTerm)) {
-                item.style.display = '';
-            } else {
-                item.style.display = 'none';
+            const serviceName = item.querySelector('.service-title').textContent.toLowerCase();
+            item.style.display = serviceName.includes(searchTerm.toLowerCase()) ? '' : 'none';
+        });
+    }
+
+    function initializeServices() {
+        servicesContainer.innerHTML = '';
+        servicesData.services.forEach(service => {
+            servicesContainer.appendChild(createServiceCard(service));
+        });
+    }
+
+    // Ad Management
+    function hideEmptyAdBoxes() {
+        adBoxes.forEach(adBox => {
+            if (!adBox.textContent.trim()) {
+                adBox.style.display = 'none';
             }
         });
+    }
+
+    // Event Listeners
+    themeToggle.addEventListener('change', function() {
+        applyTheme(this.checked ? 'dark' : 'light');
     });
+
+    searchBar.addEventListener('input', (e) => filterServices(e.target.value));
+
+    // Initialize
+    initializeTheme();
+    initializeServices();
+    hideEmptyAdBoxes();
 });
